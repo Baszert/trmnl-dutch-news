@@ -1,0 +1,67 @@
+<div class="layout layout--col layout--top text p--0">
+  <div class="absolute p--5" style="top: 0; left: 0; z-index: 10;">
+    <img class="w--16" src="
+      {% if feed contains "nos_" %}
+    https://trmnl.achtnegen.nl/rss/logos/nos_white.svg
+    {% elsif feed contains "nu_" %}
+    https://trmnl.achtnegen.nl/rss/logos/nu_white.svg
+    {% elsif feed contains "ad_" %}
+    https://trmnl.achtnegen.nl/rss/logos/ad_white.svg
+    {% elsif feed contains "rtl_" %}
+    https://trmnl.achtnegen.nl/rss/logos/rtl_white.svg
+    {% endif %}">
+  </div>
+
+  <div class="grid grid--col-2 gap--none h--full">
+    {% for item in rss.channel.item limit:1 %}
+    {% assign thumb = item.enclosure.url | default: item.content.thumbnail.url %}
+    <div class="flex flex--col flex--left h--full flex--top relative bg--gray-40">
+      {% if thumb %}
+      <img class="w--full h--full image-dither image image--cover" src="{{ thumb }}">
+      {% endif %}
+      <div class="absolute news-title p--6 pt--10">
+        <div class="text text--base font--bold text--gray-70 mb--1">
+          {{ item.pubDate | date: "%H:%M" | downcase }}
+        </div>
+        <h2 class="text text--large lg:text--xlarge text--white">
+          {{ item.title }}
+        </h2>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="w--full flex--col p--5 md:hidden lg:flex">
+      {% for item in rss.channel.item offset:1 limit:10 %}
+      <div class="flex value--xsmall gap--medium w--full h--full">
+        <div class="flex flex--col flex--left gap--none stretch">
+          <h2 class="w--full text text--base lg:text--base flex flex--center-y">
+            <span class="value--xxsmall text--gray-30 w--12">
+              {{ item.pubDate | date: "%H:%M" | downcase }}
+            </span>
+            <span class="w--full" data-clamp="1">
+              {{ item.title }}
+            </span>
+          </h2>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="w--full flex--col p--4 flex lg:hidden">
+      {% for item in rss.channel.item offset:1 limit:8 %}
+      <div class="flex value--xsmall gap--medium w--full h--full">
+        <div class="flex flex--col flex--left gap--none stretch">
+          <h2 class="w--full text text--base lg:text--base flex flex--center-y">
+            <span class="value--xxsmall text--gray-30 w--12">
+              {{ item.pubDate | date: "%H:%M" | downcase }}
+            </span>
+            <span class="w--full" data-clamp="1">
+              {{ item.title }}
+            </span>
+          </h2>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

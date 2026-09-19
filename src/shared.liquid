@@ -1,0 +1,26 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
+
+<style>
+  .layout {
+    font-family: "Google Sans Flex", sans-serif;
+    font-style: normal;
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  .news-title {
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+</style>
+{% assign feed = trmnl.plugin_settings.custom_fields_values.feed %}
+{% assign nos_logo = '<svg fill="none" viewBox="0 0 405 143" xmlns="http://www.w3.org/2000/svg"><path d="m119.434 139.629v-136.16416h-36.184v37.15596c0 11.086.199 29.1801 1.172 35.2071-2.922-5.645-14.98-23.7301-21.203-32.0941l-29.953-40.26896h-33.266v136.16416h36.184v-41.6252c0-11.09-.195-29.18-1.168-35.211 3.5 6.031 15.168 23.539 21.199 31.906l32.484 44.9302z" fill="#858e8e"/><path d="m404.891 97.8091c0-25.48-15.172-35.984-49.406-44.156-17.508-4.086-22.359-6.418-22.359-11.48 0-4.863 2.719-8.363 14-8.363 13.805 0 25.859 4.672 37.93 12.84l18.289-29.566c-14.407-10.11898-31.134-15.75598-54.275-15.75598-32.883 0-53.691 17.31198-53.691 42.98398 0 27.234 15.762 36.184 48.629 43.766 18.281 4.285 23.148 7.395 23.148 12.4489 0 6.422-4.281 8.758-17.703 8.758-12.641 0-29.953-6.812-39.875-13.6089l-18.281 29.5549c14.199 9.336 35.406 16.539 57.375 16.539 32.687 0 56.219-12.844 56.219-43.9609z" fill="#858e8e"/><path clip-rule="evenodd" d="m174.758 71.258c0-19.305 15.648-34.957 34.953-34.957 19.309 0 34.961 15.652 34.961 34.957 0 19.309-15.652 34.957-34.961 34.957-19.305 0-34.953-15.649-34.953-34.957zm-36.305 0c0-39.356 31.902-71.258 71.258-71.258s71.262 31.902 71.262 71.258-31.906 71.262-71.262 71.262-71.258-31.907-71.258-71.262z" fill="#ee3224" fill-rule="evenodd"/></svg>' %}
