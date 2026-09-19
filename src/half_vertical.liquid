@@ -1,4 +1,4 @@
-<div class="layout layout--col layout--top text p--0 gap--none">
+<div class="layout nl-news layout--col layout--top text p--0 gap--none">
   <div class="absolute p--5" style="top: 0; left: 0; z-index: 10;">
     <img class="w--16" src="
       {% if feed contains "nos_" %}
@@ -20,7 +20,7 @@
       {% endif %}
       <div class="absolute news-title p--6 pt--10">
         <div class="text text--base font--bold text--gray-70 mb--1">
-          {{ item.pubDate | date: "%H:%M" | downcase }}
+          {{ item.pubDate | date: "%s" | plus: tz_offset | date: "%H:%M" }}
         </div>
         <h2 class="text text--large lg:text--xlarge text--white">
           {{ item.title }}
@@ -35,7 +35,7 @@
         <div class="flex flex--col flex--left gap--none stretch">
           <h2 class="w--full text text--base lg:text--base flex flex--center-y">
             <span class="value--xxsmall text--gray-30 w--14">
-              {{ item.pubDate | date: "%H:%M" | downcase }}
+              {{ item.pubDate | date: "%s" | plus: tz_offset | date: "%H:%M" }}
             </span>
             <span class="w--full" data-clamp="1">
               {{ item.title }}
@@ -52,7 +52,7 @@
         <div class="flex flex--col flex--left gap--none stretch">
           <h2 class="w--full text text--base lg:text--base flex flex--center-y">
             <span class="value--xxsmall text--gray-30 w--12">
-              {{ item.pubDate | date: "%H:%M" | downcase }}
+              {{ item.pubDate | date: "%s" | plus: tz_offset | date: "%H:%M" }}
             </span>
             <span class="w--full" data-clamp="1">
               {{ item.title }}
