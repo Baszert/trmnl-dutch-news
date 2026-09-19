@@ -1,9 +1,13 @@
 # Laatste nieuws
 
-A [TRMNL](https://trmnl.com) plugin for ePaper displays, connected by
-[GitHub Sync](https://help.trmnl.com/en/articles/15977899-github-sync): every save in TRMNL lands here as a commit.
+Het laatste Nederlandse nieuws op je TRMNL, van NOS, RTL Nieuws, NU.nl of AD (inclusief regionale AD-edities). Twee hoofdberichten met foto, de rest als compacte lijst.
 
-<img width="150" alt="image" src="https://trmnl.com/images/brand/badges/light/works-with-trmnl/trmnl-badge-works-with-light.svg" />
+<a href="https://trmnl.com/recipes/206736"><img width="150" alt="Works with TRMNL" src="https://trmnl.com/images/brand/badges/light/works-with-trmnl/trmnl-badge-works-with-light.svg" /></a>
+
+## Settings
+- **News feed:** NOS, RTL Nieuws, NU.nl (algemeen, binnenland, buitenland, economie, sport, tech) of AD (algemeen, rubrieken en 27 regio's)
+
+Data from the public RSS feeds of each outlet. Refreshes every 30 minutes. Missing a feed? Let me know.
 
 ### Develop locally
 
@@ -14,6 +18,4 @@ gem install trmnl_preview
 trmnlp serve
 ```
 
-### Discoverability
-
-Add the `trmnl` topic to this repo so other TRMNL plugin builders can find it.
+Questions or ideas? trmnl@achtnegen.nl or @Bastronautica on Discord.
